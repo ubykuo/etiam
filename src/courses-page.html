@@ -32,9 +32,14 @@
         width: 100%;
         margin-bottom: 5%; 
       }
+
+      .card-actions {
+        display: flex;
+        justify-content: flex-end;
+      }
     </style>
 
-    <paper-card style="width: 100%" image="http://placehold.it/350x150" alt="Donuts">
+    <paper-card style="width: 100%" image="/images/testing-350.jpg" alt="Donuts">
       <div class="card-content">
         <div class="cafe-header">Testing 101
           <div class="cafe-location cafe-light">
@@ -52,15 +57,11 @@
         <p class="cafe-light">Una introducción al testing de productos de software mediante ejemplos ¿Por qué es importante? ¿Por qué las empresas los necesitan?</p>
       </div>
       <div class="card-actions">
-        <div class="horizontal justified">
-          <paper-icon-button icon="icons:event"></paper-icon-button>
-          <paper-button class="pull-right">20/03 17:30PM</paper-button>
-        </div>
         <paper-button class="cafe-reserve" onclick="goToCourse(this)">Entrar</paper-button>
       </div>
     </paper-card>
 
-    <paper-card style="width: 100%" image="http://placehold.it/350x150" alt="Donuts">
+    <paper-card style="width: 100%" image="/images/webdev-350.jpg" alt="Donuts">
       <div class="card-content">
         <div class="cafe-header">Desarrollo Web
           <div class="cafe-location cafe-light">
@@ -78,10 +79,6 @@
         <p class="cafe-light">Estructura y ventajas de HTML5, conceptos b&aacute;icos de CSS3 y sitios responsive y nociones principios de Javascript, estructuras de control y el nuevo est&aacute;ndar ES6.</p>
       </div>
       <div class="card-actions">
-        <div class="horizontal justified">
-          <paper-icon-button icon="icons:event"></paper-icon-button>
-          <paper-button class="pull-right">10/02 16:30PM</paper-button>
-        </div>
         <paper-button class="cafe-reserve">Anotarme</paper-button>
       </div>
     </paper-card>
