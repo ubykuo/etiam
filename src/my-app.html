@@ -63,7 +63,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         route="{{route}}"
         pattern="/:page"
         data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+        tail="{{subroute}}"></app-route>  
+
+<!--     <app-route 
+      route="{{subroute}}"
+      pattern="/:course"
+      data="{{subrouteData}}"></app-route> -->
 
     <app-drawer-layout fullbleed>
       <!-- Drawer content -->
@@ -92,6 +97,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             role="main">
           <courses-page name="courses"></courses-page>
           <profile-page name="profile"></profile-page>
+          <course-page name="course"></course-page>
           <not-found-page name="not-found"></not-found-page>
         </iron-pages>
       </app-header-layout>
@@ -111,16 +117,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       observers: [
-        '_routePageChanged(routeData.page)',
+        '_routePageChanged(routeData.page, subroute)'
       ],
 
-      _routePageChanged: function(page) {
+      _routePageChanged: function(page, subroute) {
+        var humanized = subroute.path.split('/')[1];
         this.page  = page || 'courses';
-        this.title = page.charAt(0).toUpperCase() + page.substring(1) || 'Courses';
+        
+        this.subtitle = this._isDefined(humanized) ? ' > ' + this._capitalize(humanized) : '';
+        
+        this.title = this._capitalize(this.page) + this.subtitle;
 
         if (!this.$.drawer.persistent) {
           this.$.drawer.close();
         }
+      },
+
+      _isDefined: function(object) {
+        return object !== undefined;
+      },
+
+      _capitalize: function(string) {
+        return string.charAt(0).toUpperCase() + string.substring(1);
       },
 
       _pageChanged: function(page) {

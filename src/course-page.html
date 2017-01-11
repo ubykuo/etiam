@@ -1,0 +1,127 @@
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="circle-thumb.html">
+
+<dom-module id="course-page">
+	<template>
+		<style>
+			:host {
+				display: block;
+
+				padding: 16px;
+			}
+
+			.progress {
+				color: var(--paper-green-600);
+				margin: 0 auto;
+				font-size: 3em;
+				border-radius: 50%;
+				height: 100px;
+				width: 100px;
+				display: block;
+			}
+
+			.pull-right { float: right; }
+
+			.title { margin-left: 15px; }
+
+			.stat {
+				display: flex;
+				align-items: baseline;
+				padding: 0 15px 0 15px; 
+				color: var(--paper-grey-800);
+			}
+
+			.bio {
+				display: flex;
+				align-items: baseline;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.item { flex: 5; }
+
+			.detail { flex: 1; }
+			
+			.description { 
+				color: var(--paper-grey-600); 
+				flex: 1 100%;
+			}
+
+			.main {
+				flex: 1 100%;
+				width: 100%;
+			}
+
+			.name {
+				margin-left: 15px;
+				width: 150px;
+			}
+
+			.dates {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				width: 100%;
+			}
+			.date-description { flex: 3; }
+			.date { flex: 3; }
+		</style>
+		
+		<paper-card style="width: 100%" heading="Progreso">
+		  <div class="card-content">
+		  	<span class="progress">100%</span>
+
+		  	<div class="stat">
+		  		<paper-icon-button icon="icons:assignment-turned-in"></paper-icon-button> 
+		  		<span class="item">Clases</span>
+		  		<span class="detail">5/5</span>
+		  	</div>
+
+		  	<div class="stat">
+		  		<paper-icon-button icon="icons:timeline"></paper-icon-button> 
+		  		<span class="item">Desafíos</span>
+		  		<span class="detail">2/2</span>
+		  	</div>
+		  </div>
+		</paper-card>
+
+		<paper-card style="width: 100%; margin-top: 15px">
+			<h4 class="title">Profesores</h4>
+		  <div class="card-content">
+		  	<div class="bio">
+		  		<div class="main">
+				    <circle-thumb url="http://placehold.it/50x50"></circle-thumb>
+				    <span class="name">Nombre de profesor</span>
+				  </div>
+			    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			    consequat.</p>
+		  	</div>
+		  </div>
+		</paper-card>
+
+		<paper-card style="width: 100%; margin-top: 15px">
+			<h4 class="title">Curso completado</h4>
+		  <div class="card-content">
+		  	<div class="dates">
+		  		<paper-icon-button icon="icons:event"></paper-icon-button>
+		  		<span class="date-description">Comienzo</span>
+		  		<span class="date">27 Octubre de 2015, 18:30</span>
+		  	</div>
+		  	<div class="dates">
+		  		<paper-icon-button icon="icons:event"></paper-icon-button>
+		  		<span class="date-description">Finalizado</span>
+		  		<span class="date">05 Noviembre de 2015, 14:25</span>
+		  	</div>
+		  </div>
+		</paper-card>
+	</template>
+	<script>
+		Polymer({
+			is: 'course-page'
+		});
+	</script>
+</dom-module>

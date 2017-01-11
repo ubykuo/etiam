@@ -1,0 +1,30 @@
+<dom-module id="circle-thumb">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+
+
+			.circle-thumb {
+				background-repeat: no-repeat;
+				display: inline-block;
+				height: 50px;
+				width: 50px;
+				border-radius: 100%;
+				float: left;
+			}
+
+		</style>
+		
+		<span class="circle-thumb" style="background-image: url([[url]])" aria-hidden></span>
+	</template>
+	<script>
+		Polymer({
+			is: 'circle-thumb',
+			properties: {
+				url: String
+			}
+		});
+	</script>
+</dom-module>

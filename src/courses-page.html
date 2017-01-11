@@ -1,4 +1,3 @@
-<!-- <link rel="import" href="../bower_components/polymer/polymer.html"> -->
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
@@ -57,7 +56,7 @@
           <paper-icon-button icon="icons:event"></paper-icon-button>
           <paper-button class="pull-right">20/03 17:30PM</paper-button>
         </div>
-        <paper-button class="cafe-reserve">Anotarme</paper-button>
+        <paper-button class="cafe-reserve" onclick="goToCourse(this)">Entrar</paper-button>
       </div>
     </paper-card>
 
@@ -92,5 +91,12 @@
     Polymer({
       is: 'courses-page'
     });
+
+    function goToCourse(element) {
+      element.addEventListener('transitionend', function(e) {
+        window.history.pushState({}, null, '/course/html');
+        window.dispatchEvent(new CustomEvent('location-changed'));
+      });
+    }
   </script>
 </dom-module>

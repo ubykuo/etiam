@@ -8,6 +8,7 @@
     "eslint-plugin-html": "^1.7.0"
   },
   "scripts": {
+    "dev": "polymer serve & npm run start",
     "lint": "eslint . --ext js,html; exit 0;",
     "test": "npm run lint && polymer test",
     "start": "browser-sync start --proxy localhost:8080 --files 'src/*.html, src/*.js, images/*' "

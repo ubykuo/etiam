@@ -1,5 +1,5 @@
-<!-- <link rel="import" href="../bower_components/polymer/polymer.html"> -->
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="circle-thumb.html">
 
 <dom-module id="profile-page">
 	<template>
@@ -16,6 +16,7 @@
 			}
 
 			.profile-username { color: var(--paper-grey-600); }
+
 			.course {
 				float: right;
 				font-size: 15px;
@@ -30,15 +31,6 @@
 			.title { 
 				padding-top: 15px;
 				color: var(--paper-grey-700); 
-			}
-
-			.course-thumb {
-				background:url(http://placehold.it/50x50) no-repeat;
-				display: inline-block;
-				height: 50px;
-				width: 50px;
-				border-radius: 100%;
-				float: left;
 			}
 
 			.course-title {
@@ -74,7 +66,7 @@
 		<p class="title">Cursos compleatados</p>
 		<paper-card style="width: 100%; margin-top: 10px">
 		  <div class="card-content">
-		  	<span class="course-thumb" aria-hidden></span>
+		  	<circle-thumb url="http://placehold.it/50x50"></circle-thumb>
 		  	<span class="course-title">Introducción a Ruby</span><br>
 		  	<span class="tag" style="margin-left: 10px; color: #e62117">Ruby</span> <span class="tag" style="color: #8167d7">Backend</span>
 		  </div>
@@ -83,7 +75,7 @@
 		<p class="title">Cursos en marcha</p>
 		<paper-card style="width: 100%">
 		  <div class="card-content">
-		  	<span class="course-thumb" aria-hidden></span>
+		  	<circle-thumb url="http://placehold.it/50x50"></circle-thumb>
 		  	<span class="course-title">Diseño de aplicaciones</span><br>
 		  	<span class="tag" style="margin-left: 10px; color: #f24e14">Diseño</span>
 		  </div>
@@ -91,7 +83,7 @@
 
 		<paper-card style="width: 100%">
 		  <div class="card-content">
-		  	<span class="course-thumb" aria-hidden></span>
+		  	<circle-thumb url="http://placehold.it/50x50"></circle-thumb>
 		  	<span class="course-title">React</span><br>
 		  	<span class="tag" style="margin-left: 10px; color: #f0db4f">Javascript</span> <span class="tag" style="margin-left: 10px; color: #1aaedf">Frontend</span>
 		  </div>
