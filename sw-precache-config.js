@@ -15,6 +15,19 @@ module.exports = {
     '/index.html',
     '/manifest.json',
     '/bower_components/webcomponentsjs/webcomponents-lite.min.js',
+    '/images/*'
   ],
   navigateFallback: 'index.html',
+  // runtimeCaching: [
+  //   {
+  //     urlPattern: /\/placeho\/images\/.*/,
+  //     handler: 'cacheFirst',
+  //     options: {
+  //       cache: {
+  //         maxEntries: 200,
+  //         name: 'items-cache'
+  //       }
+  //     }
+  //   }
+  // ]
 };

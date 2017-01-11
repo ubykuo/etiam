@@ -3,6 +3,7 @@
   "shell": "src/my-app.html",
   "fragments": [
     "src/courses-page.html",
+    "src/profile-page.html",
     "src/not-found-page.html"
   ],
   "sourceGlobs": [
