@@ -1,15 +1,45 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="profile-page">
 	<template>
 		<style>
 			:host {
-				display: block;
+			  display: block;
+
+			  padding: 16px;
+			}
+
+			.profile-name { 
+				@apply(--paper-font-headline);
+				font-size: 1.2em;
+			}
+
+			.profile-username { color: var(--paper-grey-600); }
+			.course {
+				float: right;
+				font-size: 15px;
+				vertical-align: middle;
 			}
 		</style>
 		
-		<h1>Profile</h1>
+		<paper-card style="width: 100%" image="http://placehold.it/350x350" alt="Profile picture">
+		  <div class="card-content">
+		  	<div class="profile-name">Juan Jos&eacute; Figueiras</div>
+		  	<div class="profile-username">
+		  		@juanf
+		  	</div>
+		  </div>
+		  <div class="card-actions">
+		    <div>Testing 101
+		      <div class="course">
+		        <iron-icon icon="communication:location-on"></iron-icon>
+		        <span>8 clases</span>
+		      </div>
+		    </div>
+		  </div>
+		</paper-card>
 	</template>
 	<script>
 		Polymer({

@@ -1,6 +1,8 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="shared-styles.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="shared-styles.html">
 
 <dom-module id="courses-page">
   <!-- Defines the element's style and local DOM -->
@@ -11,21 +13,78 @@
 
         padding: 16px;
       }
+
+      .cafe-header { @apply(--paper-font-headline); }
+      .cafe-light { color: var(--paper-grey-600); }
+      .cafe-location {
+        float: right;
+        font-size: 15px;
+        vertical-align: middle;
+      }
+      .cafe-reserve { color: var(--google-blue-500); }
+      .pull-right { float: right !important; }
+
+      iron-icon.star {
+        --iron-icon-width: 16px;
+        --iron-icon-height: 16px;
+        color: var(--paper-amber-500);
+      }
+
+      paper-card {
+        width: 100%;
+        margin-bottom: 5%; 
+      }
     </style>
 
-    
-    <paper-card heading="Emmental" image="http://placehold.it/350x150/FFC107/000000" alt="Emmental">
+    <paper-card style="width: 100%" image="http://placehold.it/350x150" alt="Donuts">
       <div class="card-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <div class="cafe-header">Testing 101
+          <div class="cafe-location cafe-light">
+            <iron-icon icon="communication:location-on"></iron-icon>
+            <span>8 clases</span>
+          </div>
+        </div>
+        <div class="cafe-rating">
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+        </div>
+        <p class="cafe-light">Una introducción al testing de productos de software mediante ejemplos ¿Por qué es importante? ¿Por qué las empresas los necesitan?</p>
       </div>
       <div class="card-actions">
-        <paper-button>Share</paper-button>
-        <paper-button>Explore!</paper-button>
+        <div class="horizontal justified">
+          <paper-icon-button icon="icons:event"></paper-icon-button>
+          <paper-button class="pull-right">20/03 17:30PM</paper-button>
+        </div>
+        <paper-button class="cafe-reserve">Anotarme</paper-button>
+      </div>
+    </paper-card>
+
+    <paper-card style="width: 100%" image="http://placehold.it/350x150" alt="Donuts">
+      <div class="card-content">
+        <div class="cafe-header">Desarrollo Web
+          <div class="cafe-location cafe-light">
+            <iron-icon icon="communication:location-on"></iron-icon>
+            <span>4 clases</span>
+          </div>
+        </div>
+        <div class="cafe-rating">
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+          <iron-icon class="star" icon="star"></iron-icon>
+        </div>
+        <p class="cafe-light">Estructura y ventajas de HTML5, conceptos b&aacute;icos de CSS3 y sitios responsive y nociones principios de Javascript, estructuras de control y el nuevo est&aacute;ndar ES6.</p>
+      </div>
+      <div class="card-actions">
+        <div class="horizontal justified">
+          <paper-icon-button icon="icons:event"></paper-icon-button>
+          <paper-button class="pull-right">10/02 16:30PM</paper-button>
+        </div>
+        <paper-button class="cafe-reserve">Anotarme</paper-button>
       </div>
     </paper-card>
   </template>
