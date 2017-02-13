@@ -91,7 +91,7 @@
 
     function goToCourse(element) {
       element.addEventListener('transitionend', function(e) {
-        window.history.pushState({}, null, '/course/html');
+        window.history.pushState({}, null, '/course/testing');
         window.dispatchEvent(new CustomEvent('location-changed'));
       });
     }
