@@ -1,0 +1,67 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="course-card">
+	<style>
+		.course-header { @apply(--paper-font-headline); }
+		.course-light { color: var(--paper-grey-600); }
+		.course-location {
+		  float: right;
+		  font-size: 15px;
+		  vertical-align: middle;
+		}
+		.course-reserve { color: var(--google-blue-500); }
+		.pull-right { float: right !important; }
+
+		iron-icon.star {
+		  --iron-icon-width: 16px;
+		  --iron-icon-height: 16px;
+		  color: var(--paper-amber-500);
+		}
+
+		paper-card {
+		  width: 100%;
+		  margin-bottom: 5%; 
+		}
+
+		.card-actions {
+		  display: flex;
+		  justify-content: flex-end;
+		}	
+	</style>
+
+	<template>
+		<paper-card style="width: 100%" image="{{course.thumbnail}}" alt="{{course.thumbnail_alt}}">
+		  <div class="card-content">
+		    <div class="course-header">{{course.name}}
+		      <div class="course-location course-light">
+		        <iron-icon icon="communication:location-on"></iron-icon>
+		        <span>{{course.classes}} clases</span>
+		      </div>
+		    </div>
+		    <div class="course-rating">
+		      <iron-icon class="star" icon="star"></iron-icon>
+		      <iron-icon class="star" icon="star"></iron-icon>
+		      <iron-icon class="star" icon="star"></iron-icon>
+		      <iron-icon class="star" icon="star"></iron-icon>
+		      <iron-icon class="star" icon="star"></iron-icon>
+		    </div>
+		    <p class="course-light">{{course.description}}</p>
+		  </div>
+		  <div class="card-actions">
+		    <paper-button class="course-reserve" onclick="goToCourse(this)">Entrar</paper-button>
+		  </div>
+		</paper-card>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'course-card',
+			properties: {
+				course: Object
+			}
+		});
+	</script>
+</dom-module>
