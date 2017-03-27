@@ -1,20 +1,45 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../bower_components/iron-media-query/iron-media-query.html">
 <link rel="import" href="./course-card.html">
 
 <dom-module id="courses-page">
   <!-- Defines the element's style and local DOM -->
   <template>
-    <style>
+    <style include="app-grid-style">
       :host {
+        --app-grid-columns: 3;
         display: block;
-
         padding: 16px;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      li:not(:last-child) {
+        padding-right: 10px;
+      }
+
+
+      @media all and (max-width: 600px)  {
+        
+        :host {
+          --app-grid-columns: 1;
+        }
       }
     </style>
 
-    <template is="dom-repeat" as="course" items="{{courses}}">
-      <course-card course="{{course}}"></course-card>
-    </template>
+    <iron-media-query query="(max-width: 600px)" query-matches="{{isMobileNav}}"></iron-media-query>
+
+    <ul class="app-grid">
+      <template is="dom-repeat" as="course" items="{{courses}}">
+        <li class="item">
+          <course-card course="{{course}}"></course-card>
+        </li>
+      </template>
+    </ul>
   </template>
   <!-- Creates the element's prototype and registers it -->
   <script>
@@ -35,9 +60,48 @@
             description: 'Estructura y ventajas de HTML5, conceptos b&aacute;icos de CSS3 y sitios responsive y nociones principios de Javascript, estructuras de control y el nuevo est&aacute;ndar ES6.',
             thumbnail: '/images/webdev-350.jpg',
             'thumbnail-alt': 'Web Development Image'
+          },
+          {
+            name: 'Desarrollo Web',
+            classes: 4,
+            description: 'Estructura y ventajas de HTML5, conceptos b&aacute;icos de CSS3 y sitios responsive y nociones principios de Javascript, estructuras de control y el nuevo est&aacute;ndar ES6.',
+            thumbnail: '/images/webdev-350.jpg',
+            'thumbnail-alt': 'Web Development Image'
+          },
+          {
+            name: 'Testing 101',
+            classes: 8,
+            description: 'Una introducción al testing de productos de software mediante ejemplos ¿Por qué es importante? ¿Por qué las empresas los necesitan?',
+            thumbnail: '/images/testing-350.jpg',
+            'thumbnail-alt': 'Testing Image'
+          },
+          {
+            name: 'Desarrollo Web',
+            classes: 4,
+            description: 'Estructura y ventajas de HTML5, conceptos b&aacute;icos de CSS3 y sitios responsive y nociones principios de Javascript, estructuras de control y el nuevo est&aacute;ndar ES6.',
+            thumbnail: '/images/webdev-350.jpg',
+            'thumbnail-alt': 'Web Development Image'
+          },
+          {
+            name: 'Desarrollo Web',
+            classes: 4,
+            description: 'Estructura y ventajas de HTML5, conceptos b&aacute;icos de CSS3 y sitios responsive y nociones principios de Javascript, estructuras de control y el nuevo est&aacute;ndar ES6.',
+            thumbnail: '/images/webdev-350.jpg',
+            'thumbnail-alt': 'Web Development Image'
           }
         ]
-      }
+      },
+      // Declare an observer on isMobileNav
+      // The name must be the same as in the iron-query element described above
+      observers: [
+        '_isMobileNavChanged(isMobileNav)'
+      ],
+
+      // Each time media query turns true or false (like a toggle), refresh styles
+       _isMobileNavChanged: function(param) {
+          this.updateStyles();
+          console.log('Updated styles');
+      },
     });
 
     function goToCourse(element) {
